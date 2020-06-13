@@ -1,0 +1,24 @@
+/*   Thomas Burch (1314305)
+ *   tburch1@ucsc.edu
+ *   CMPS104A-ASG3
+ *
+ * NAME
+ *     oc
+ * 
+
+Overview
+Augment your string table and scanner by adding an oc parser to the project. The
+output of this project will be an abstract syntax tree written to the file program.ast,
+in addition to the files generated from the previous two projects. All specifications
+from the first two projects apply, and in addition, the -y flag must turn on yydebug.
+
+
+SYNOPSIS
+oc [-ly] [-@ flag ...] [-D string] program.oc
+The main function will open a pipe to the C preprocessor as before, but will never
+call yylex(). Instead it makes a single call to yyparse(), which will call yylex() as
+needed. When yyparse() returns, the main function will call a function to dump the
+AST. The function yyparse() calls yyerror() to print an error message whenever it
+detects a syntax error and has to recover. The -y flag must turn on the yydebug
+switch. Generate a file called program.ast based on the input file name, and also
+generate all files specified in earlier projects.

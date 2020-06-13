@@ -1,0 +1,31 @@
+/* Thomas Burch (1314305)
+    tburch1@ucsc.edu
+    CMPS104A-ASG4
+
+ *
+ * NAME
+ *     oc
+ * 
+
+Overview
+
+A symbol table maintains all of the identifiers in a program so that they can be
+looked up when referenced. Every time a symbol definition is found, it is entered
+into the symbol table, and every time a reference is found, it is looked up in the
+symbol table. It also maintains scope and range information, information that
+determines from where a symbol may be referenced.
+Another important part of a compiler is the type checking mechanism, which is used
+to verify that operators and functions are passed types of an appropriate nature and
+return results that are consistent. This is done by adding attributes to each node of
+the AST, although only declaration and expression nodes have non-null attributes.
+
+SYNOPSIS
+
+oc [-ly] [-@ flag ...] [-D string] program.oc
+All of the requirements for all previous projects are included in this project. The
+semantic routines of this project will be called after the parser has returned to the
+main program. For any input file called program.oc generate a symbol table file
+called program.sym. In addition, change the AST printing function from the previous
+project so that it prints out all attributes in each node on each line after the
+information required in the previous project. Thus, the AST file for this project will
+have more information in it than for the previous project.
